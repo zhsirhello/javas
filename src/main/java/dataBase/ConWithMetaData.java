@@ -6,7 +6,7 @@ import java.sql.*;
 /**
  * @author zhou
  * @Time 2019.1.3
- * @decribe 使用connection获取数据库中表的元数据。以下是获取所有列名
+ * @decribe 使用connection获取数据库中表的元数据。以下是获取所有列名,以及主键
  */
 public class ConWithMetaData {
     public static void main(String[] args){
@@ -14,7 +14,7 @@ public class ConWithMetaData {
        //驱动程序名
         String driver = "com.mysql.jdbc.Driver";
        //URL指向要访问的数据库名mydata
-        String url = "jdbc:mysql://localhost:3306/mysql";
+        String url = "jdbc:mysql://localhost:3306/test";
         //MySQL配置时的用户名
         String user = "root";
         //MySQL配置时的密码
@@ -27,10 +27,16 @@ public class ConWithMetaData {
             if(!con.isClosed()) {
                 System.out.println("Succeeded connecting to the Database!");
                 DatabaseMetaData metaData = con.getMetaData();
-                ResultSet resultSet = metaData.getColumns(null, null, "func", "%");
+                ResultSet resultSet = metaData.getColumns(null, null, "people", "%");
                 while(resultSet.next()){
                     System.out.println(resultSet.getString("COLUMN_NAME"));
                 }
+                System.out.println("===============================");
+                ResultSet PKset = metaData.getPrimaryKeys(null, "test", "people");
+                while (PKset.next()){
+                    System.out.println(PKset.getString("COLUMN_NAME"));
+                }
+
             }
             /*//2.创建statement类对象，用来执行SQL语句！！
             Statement statement = con.createStatement();
