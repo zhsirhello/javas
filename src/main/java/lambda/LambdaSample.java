@@ -42,9 +42,9 @@ public class LambdaSample {
         });
         list.forEach(System.out::println);
 
-        for(int i=0;i<list.size();i++){
+        /*for(int i=0;i<list.size();i++){
             System.out.println(list.get(i));
-        }
+        }*/
     }
     //语法糖？在lambda表达式部分，将全部转化成小写。特殊的输出，遍历，又是一种简化“::”双冒号表示对方法的引用
     public static void printConstru(){
