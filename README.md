@@ -16,4 +16,6 @@ javas
 #
 tcpsocket.numThread内容
 #
-    
+    考虑到阻塞的情况，所以在服务端为每个socket都创建一个线程，避免因为一个BufferedReader.readLine()之类
+    的原因阻塞，导致全部阻塞。
+    在socket客户端也用了两个线程，一个用来输入，一个用来读取。
