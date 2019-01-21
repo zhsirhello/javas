@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
+/**
+ * ，避免阻塞，在socket客户端也用了两个线程，一个用来输入，一个用来读取。
+ */
 public class MyClient {
     public static void main(String[] args)
             throws IOException
