@@ -19,3 +19,8 @@ tcpsocket.numThread内容
     考虑到阻塞的情况，所以在服务端为每个socket都创建一个线程，避免因为一个BufferedReader.readLine()之类
     的原因阻塞，导致全部阻塞。
     在socket客户端也用了两个线程，一个用来输入，一个用来读取。
+  
+#
+    MultiDown 多线程下载资源，使用URL类获取资源
+    URL对象可以openStream，创建一个inputStream。根据线程数与资源的长度划分资源，使用多线程的时候对inputStream做一个跳转，则
+    每个线程只下载自己那一部分。
