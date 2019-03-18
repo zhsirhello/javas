@@ -28,4 +28,6 @@ public class Digui {
         String rightSerach = iQueryMaxCommString(stringA, stringB.substring(1, stringB.length()));
         return leftSerach.length() >= rightSerach.length() ? leftSerach : rightSerach;
     }
+
+
 }
