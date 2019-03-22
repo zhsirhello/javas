@@ -24,3 +24,7 @@ tcpsocket.numThread内容
     MultiDown 多线程下载资源，使用URL类获取资源
     URL对象可以openStream，创建一个inputStream。根据线程数与资源的长度划分资源，使用多线程的时候对inputStream做一个跳转，则
     每个线程只下载自己那一部分。
+
+#
+青蛙跳问题：
+    主要思考的一种方式是最后两阶便是两种方法，而前面一阶或者两阶是属于不同的方式，可累加
