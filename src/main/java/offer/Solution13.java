@@ -6,7 +6,7 @@ package offer;
  */
 public class Solution13 {
 
-    /*public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+    public boolean HasSubtree(TreeNode root1,TreeNode root2) {
         if(root2==null){
             return false;
         }
@@ -18,11 +18,7 @@ public class Solution13 {
             flag = subTree(root1,root2);
         }
         if(!flag){
-            flag = HasSubtree(root1.left,root2);
-            if(!flag){
-                flag=HasSubtree(root1.right,root2);
-            }
-
+            flag = HasSubtree(root1.left,root2) ||HasSubtree(root1.right,root2);
         }
         return flag;
     }
@@ -39,5 +35,5 @@ public class Solution13 {
         }else{
             return subTree(par.left,chi.left) && subTree(par.right,par.right);
         }
-    }*/
+    }
 }
