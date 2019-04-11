@@ -37,4 +37,13 @@ public class Solution19 {
         }
         return leftFlag&&rightFlag;
     }
+
+    //如果Arrays.copyOfRange编译无法通过，则使用如下方法实现相同功能
+    public int[] getArray(int[] arr,int begin,int end){
+        int[] areturn = new int[end-begin];
+        for(int i=begin;i<end;i++){
+            areturn[i-begin]=arr[i];
+        }
+        return areturn;
+    }
 }
