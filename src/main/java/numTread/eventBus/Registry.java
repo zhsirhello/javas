@@ -9,6 +9,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Registry {
+    public void bind(Object subsriber){
+        List<Method> subscribeMethods = getSubscribeMethods(subsriber);
+        subscribeMethods.forEach(method -> tierSubscriber(subsriber,method));
+    }
+
     private final ConcurrentHashMap<String, ConcurrentLinkedQueue<Subscriber>> subscriberContainer=
             new ConcurrentHashMap<>();
     //获得某个类被@subscribe修饰的方法
