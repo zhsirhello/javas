@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * 一个圈，第i个点有油量gas[i],从第i点到第i+1点，花费油量cost[i]，问：能否有一个点支持走完这一圈。有返回起始点，无返回-1
+ * 贪心算法
  */
 public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {
