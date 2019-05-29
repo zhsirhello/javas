@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * 求一个数组的所有排列
  * 回溯法
+ * 分治法怎么做？
  */
 public class Permutation {
     ArrayList<ArrayList<Integer>> all =new ArrayList<ArrayList<Integer>>();
