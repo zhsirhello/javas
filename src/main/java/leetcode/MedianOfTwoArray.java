@@ -2,6 +2,7 @@ package leetcode;
 
 /**
  * 两个有序数组，求中位数，时间复杂度O（log（m+n））
+ * 不懂
  */
 public class MedianOfTwoArray {
     public double findMedianSortedArrays(int[] A, int[] B) {
