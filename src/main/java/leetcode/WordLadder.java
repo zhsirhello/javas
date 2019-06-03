@@ -6,6 +6,8 @@ import java.util.LinkedList;
 
 /**
  * 给定一个起始字符串，一个end字符串，然后给定一个字典，每次只可以改变一个字符，从start到end需要多少步
+ * bfs,广度优先搜索
+ *
  * For example,
  * Given:
  * start ="hit"
