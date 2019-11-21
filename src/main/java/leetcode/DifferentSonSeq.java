@@ -44,4 +44,21 @@ public class DifferentSonSeq {
         int count_increment = count - count_pre;
         map.put(key, count_increment);
     }
+
+    //动态规划
+    public int numDistinct1(String s, String t){
+        int[][] dp = new int[t.length()+1][s.length()+1];
+        for(int i =0;i<s.length()+1 ; i++)
+            dp[0][i] = 1;
+        for(int i=1;i<t.length()+1;i++){
+            for(int j=i;j<s.length()+1;j++){
+                if(t.charAt(i-1) == s.charAt(j-1)){
+                    dp[i][j] = dp[i][j-1]+dp[i-1][j-1];
+                }else{
+                    dp[i][j] = dp[i][j-1];//说明S加一个字符不起作用
+                }
+            }
+        }
+        return dp[t.length()][s.length()];
+    }
 }
