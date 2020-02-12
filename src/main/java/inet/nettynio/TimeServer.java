@@ -43,6 +43,11 @@ public class TimeServer {
 
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
+            /**
+             * 与客户端同样添加解决粘包问题
+             * socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));//以换行符为标志的解码器
+             * socketChannel.pipeline().addLast(new StringDecoder());  //StringDecoder的作用是转换成字符串
+             */
             socketChannel.pipeline().addLast(new TimeServerHandler());
         }
     }

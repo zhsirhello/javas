@@ -20,6 +20,11 @@ public class TimeClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch){
+                            /**
+                             * 以下代码添加与服务端同样添加后解决粘包问题
+                             * ch.pipeline().addLast(new LineBasedFrameDecoder(1024));
+                             * ch.pipeline().addLast(new StringDecoder());
+                             */
                             ch.pipeline().addLast(new TimeClientHandler());
                         }
                     });
