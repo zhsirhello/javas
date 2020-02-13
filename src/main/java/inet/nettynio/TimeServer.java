@@ -9,6 +9,9 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+/**
+ * 这个类主要用来启动服务端，配置一些参数，比如粘包问题，序列化问题等
+ */
 public class TimeServer {
 
     public void bind(int port) throws Exception {

@@ -7,6 +7,9 @@ import io.netty.channel.ChannelHandlerContext;
 
 import java.util.Date;
 
+/**
+ * 这个类主要用来写读写逻辑
+ */
 public class TimeServerHandler extends ChannelHandlerAdapter {
 
     @Override
